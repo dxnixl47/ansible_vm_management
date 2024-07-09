@@ -1,0 +1,5 @@
+# Common variables for all roles
+common_packages:
+  - vim
+  - curl
+  - git

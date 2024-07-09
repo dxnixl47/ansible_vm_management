@@ -1,0 +1,16 @@
+---
+- name: Copy script to NUK1
+  copy:
+    src: script_nuk1.sh
+    dest: /home/user1/script_nuk1.sh
+    mode: '0755'
+
+- name: Execute script on NUK1
+  command: /home/user1/script_nuk1.sh
+
+- name: Reboot NUK1
+  reboot:
+    msg: "Reboot initiated by Ansible"
+    pre_reboot_delay: 10
+    post_reboot_delay: 60
+    test_command: whoami
